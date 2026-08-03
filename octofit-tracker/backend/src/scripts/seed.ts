@@ -43,6 +43,10 @@ interface SeedData {
   leaderboard: LeaderboardSeed[];
 }
 
+/**
+ * Build sample test data for the OctoFit database covering users, teams,
+ * activities, workouts, and leaderboard entries.
+ */
 export function buildSeedData(): SeedData {
   return {
     users: [
