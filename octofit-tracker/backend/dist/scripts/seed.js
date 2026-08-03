@@ -6,6 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildSeedData = buildSeedData;
 const mongoose_1 = __importDefault(require("mongoose"));
 const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/octofit_db';
+/**
+ * Seed the octofit_db database with test data
+ * Build sample test data for the OctoFit database covering users, teams,
+ * activities, workouts, and leaderboard entries.
+ */
 function buildSeedData() {
     return {
         users: [
@@ -58,6 +63,7 @@ async function seedDatabase() {
         await db.collection('activities').insertMany(data.activities);
         await db.collection('workouts').insertMany(data.workouts);
         await db.collection('leaderboard').insertMany(data.leaderboard);
+        console.log('Seed the octofit_db database with test data');
         console.log('Database seeding complete');
         await mongoose_1.default.disconnect();
     }
