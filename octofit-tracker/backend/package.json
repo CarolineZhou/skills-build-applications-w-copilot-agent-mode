@@ -6,6 +6,7 @@
     "mongoose": "^9.9.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^26.1.2",
     "ts-node": "^10.9.2",
@@ -16,6 +17,8 @@
   "scripts": {
     "dev": "ts-node src/index.ts",
     "start": "node dist/index.js",
-    "build": "tsc"
+    "build": "tsc",
+    "seed": "node dist/scripts/seed.js",
+    "test": "npm run build && node --test dist/**/*.test.js"
   }
 }
