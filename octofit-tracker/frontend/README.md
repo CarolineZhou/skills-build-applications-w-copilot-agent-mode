@@ -1,16 +1,21 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This frontend uses React 19, Vite, Bootstrap, and react-router-dom for the OctoFit multi-tier experience.
 
-Currently, two official plugins are available:
+## Environment configuration
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The presentation tier uses the GitHub Codespaces public URL when the environment variable `VITE_CODESPACE_NAME` is defined. Define it in a local environment file such as `.env.local`:
 
-## React Compiler
+```env
+VITE_CODESPACE_NAME=your-codespace-name
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+If `VITE_CODESPACE_NAME` is not set, the app falls back to the local backend at `http://localhost:8000/api`.
 
-## Expanding the ESLint configuration
+## Development
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Run the frontend with:
+
+```bash
+npm --prefix octofit-tracker/frontend run dev -- --host 0.0.0.0
+```
